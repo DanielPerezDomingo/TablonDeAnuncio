@@ -1,0 +1,19 @@
+{{define "index"}}
+<!DOCTYPE html>
+<html>
+<body>
+
+
+
+<form method="post">
+  <label for="texto">Texto a Imprimir</label><br>
+  <input type="text" id="texto" name="texto"><br>
+  <input type="submit" value="Enviar">
+</form> 
+
+<p>{{.Texto}}</p>
+
+</body>
+</html>
+
+{{end}}
