@@ -5,12 +5,21 @@
 {{template "head"}}
     <body>
       <div class="valign-wrapper fullscreen">
-        <h1 class="center-align" style="width: 100%; "><p>{{.Texto}}</p>
-        <p class="center-align" style="width: 100%;font-family: 'Libre Barcode 128'">{{.Texto}}</h1></p>
+      <h1 class="center-align" style="width: 100%; "><p>{{.Texto}}</p>
+        <p style="font-family: 'Libre Barcode 128'">{{.Texto}}</p>       
+        <p style="font-size: 20px;" id="hora">No se puede Cargar la fecha </p>
+     </h1>
       </div>
       <!--JavaScript at end of body for optimized loading-->
        <script>
         window.setTimeout( function() {window.location.reload();}, 5000);
+        
+        if (!Date.ahora) {
+          Date.ahora = function() { return new Date().toLocaleString(); }
+        }
+        function fechahora () {document.getElementById("hora").innerHTML = Date.ahora()}
+        fechahora()
+        setInterval(fechahora, 1000);
 
       </script> 
     </body>
