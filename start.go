@@ -54,6 +54,7 @@ func main() {
 	fs := http.FileServer(http.Dir("./web/"))
 	http.Handle("/js/", fs)
 	http.Handle("/css/", fs)
+	http.Handle("/img/", fs)
 	http.Handle("/", &Anun)
 
 	fmt.Printf("Starting server at port 8080\n")
